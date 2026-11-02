@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        PATH = "C:\\Program Files\\Docker\\Docker\\resources;${env.PATH}"
+    }
     stages {
         stage('Build') {
             steps {
@@ -8,7 +11,7 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" build -t my-app .'
+                bat 'docker build -t my-app .'
             }
         }
     }
