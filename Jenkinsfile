@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                bat 'docker build -t my-app .'
+                bat '"C:\Users\malee\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe" build -t my-app .'
             }
         }
     }
